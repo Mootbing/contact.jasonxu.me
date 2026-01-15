@@ -12,6 +12,7 @@ function ContactBalls ({imgSrc, link, hoverText, ...props}) {
     return <div className={styles.contactBallContainer} {...props} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <a href={link} target="_blank" className={styles.contactBallLink}>
             <div className={styles.contactBall}>
+                <div className={styles.contactBallBlur}></div>
                 <img src={imgSrc} className={styles.contactBallImage} style={{
                     //lighten the svg on hover
                     filter: isHovered ? "brightness(3)" : "brightness(1)"

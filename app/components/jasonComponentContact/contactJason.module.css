@@ -152,11 +152,21 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+}
+
+.contactBallBlur {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(8px);
+  z-index: -1;
 }
 
 .contactBall:hover {
