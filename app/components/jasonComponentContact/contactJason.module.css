@@ -8,6 +8,17 @@
   }
 }
 
+/* Fade-in that respects a per-element final opacity via CSS variable */
+@keyframes fadeInToOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: var(--final-opacity, 0.5);
+  }
+}
+
 @keyframes slideInFromBottom {
   0% {
     transform: translateY(100px);
@@ -160,8 +171,9 @@
 
   transform: translate(-50%, -50%);
 
-  animation: fadeIn 1s ease-in-out 0s 1;
-  opacity: 0.5;
+  /* Use a specialized fade-in that lands on the configured opacity */
+  animation: fadeInToOpacity 1s ease-in-out 0s 1 forwards;
+  opacity: 0;
 }
 
 .contactBallContainer {
@@ -206,7 +218,7 @@
 .contactBallText {
   position: absolute;
 
-  top: 105%;
+  top: 115%;
   left: 50%;
   transform: translate(-50%, -50%);
 

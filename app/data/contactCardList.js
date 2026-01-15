@@ -1,17 +1,17 @@
 const contactCardList = [
     {
         image: "./images/contact/Email.svg",
-        title: "Email",
+        title: "Him@JasonXu.Me",
         link: "mailto:him@jasonxu.me",
     },
     {
         image: "./images/contact/LinkedIn.svg",
-        title: "LinkedIn",
+        title: "LinkedIn/xj1",
         link: "https://www.linkedin.com/in/xj1/"
     },
     {
         image: "./images/contact/GitHub.svg",
-        title: "GitHub",
+        title: "GitHub/MOOTBING",
         link: "https://github.com/mootbing"
     },
     // {

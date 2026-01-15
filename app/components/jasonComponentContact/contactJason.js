@@ -122,16 +122,22 @@ export default function ContactJason ({...props}) {
 
             <div className={styles.backgroundOrbitalsContainer}>
                 <img src="./images/contact/smallBackgrondOrbital.svg" style={{
-                      width: 0.75 * Math.min(1150, Math.min(height, width)),
-                      height:  0.75 * Math.min(1150, Math.min(height, width))
+                  width: 0.75 * Math.min(1150, Math.min(height, width)),
+                  height:  0.75 * Math.min(1150, Math.min(height, width)),
+                  /** Final target opacity for small ring */
+                  '--final-opacity': '0.35'
                 }} />
                 <img src="./images/contact/mediumBackgroundOrbital.svg" style={{
-                      width: 1 * Math.min(1150, Math.min(height, width)),
-                      height:  1 * Math.min(1150, Math.min(height, width))
+                  width: 1 * Math.min(1150, Math.min(height, width)),
+                  height:  1 * Math.min(1150, Math.min(height, width)),
+                  /** Final target opacity for medium ring */
+                  '--final-opacity': '0.25'
                 }} />
                 <img src="./images/contact/largeBackgroundOrbital.svg" style={{
-                      width: 1.25 * Math.min(1150, Math.min(height, width)),
-                      height:  1.25 * Math.min(1150, Math.min(height, width))
+                  width: 1.25 * Math.min(1150, Math.min(height, width)),
+                  height:  1.25 * Math.min(1150, Math.min(height, width)),
+                  /** Final target opacity for large ring */
+                  '--final-opacity': '0.15'
                 }} />
             </div>
 
