@@ -17,7 +17,7 @@ function ContactBalls ({imgSrc, link, hoverText, ...props}) {
                     //lighten the svg on hover
                     filter: isHovered ? "brightness(3)" : "brightness(1)"
                 }}/>
-                {isHovered && <p className={styles.contactBallText}>{hoverText}</p>}
+                <p className={`${styles.contactBallText} ${isHovered ? styles.hovered : ''}`}>{hoverText}</p>
             </div>
         </a>
     </div>

@@ -20,6 +20,30 @@
   }
 }
 
+@keyframes blurIn {
+  0% {
+    filter: blur(15px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes blurOut {
+  0% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+  100% {
+    filter: blur(15px);
+    opacity: 0;
+  }
+}
+
 .scrollContainer {
   width: 100vw;
   height: 150vh;
@@ -194,6 +218,13 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
+  z-index: 10;
+  padding-top: 5px;
+  animation: blurOut 0.3s ease forwards;
+}
+
+.contactBallText.hovered {
+  animation: blurIn 0.4s ease forwards;
 }
 
 .contactCardContainer {
