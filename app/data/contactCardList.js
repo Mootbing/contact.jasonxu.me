@@ -1,5 +1,10 @@
 const contactCardList = [
     {
+        image: "./images/contact/Website.svg",
+        title: "About Me",
+        link: "https://jasonxu.me/"
+    },
+    {
         image: "./images/contact/Email.svg",
         title: "Him@JasonXu.Me",
         link: "mailto:him@jasonxu.me",
@@ -14,11 +19,6 @@ const contactCardList = [
         title: "GitHub/MOOTBING",
         link: "https://github.com/mootbing"
     },
-    // {
-    //     image: "./images/contact/Itchio.svg",
-    //     title: "Itch.io",
-    //     link: "https://cowlandgamestudios.itch.io/"
-    // },
     {
         image: "./images/contact/Document.svg",
         title: "Resume",
