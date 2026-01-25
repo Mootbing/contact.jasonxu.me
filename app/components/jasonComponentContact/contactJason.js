@@ -120,26 +120,30 @@ export default function ContactJason({ ...props }) {
   return (
     <div className={styles.primalContainer} {...props}>
       <div className={styles.backgroundOrbitalsContainer}>
-        <Image src="/images/contact/smallBackgrondOrbital.svg" alt="Small Orbital" width={minDim * constants.SMALL_ORBITAL_SCALE} height={minDim * constants.SMALL_ORBITAL_SCALE} style={{ '--final-opacity': constants.CAROUSEL_OPACITY_MEDIUM }} />
-        <Image src="/images/contact/mediumBackgroundOrbital.svg" alt="Medium Orbital" width={minDim * constants.MEDIUM_ORBITAL_SCALE} height={minDim * constants.MEDIUM_ORBITAL_SCALE} style={{ '--final-opacity': constants.CAROUSEL_OPACITY_LARGE }} />
-        <Image src="/images/contact/largeBackgroundOrbital.svg" alt="Large Orbital" width={minDim * constants.LARGE_ORBITAL_SCALE} height={minDim * constants.LARGE_ORBITAL_SCALE} style={{ '--final-opacity': constants.CAROUSEL_OPACITY_SMALL }} />
+          <Image src="/images/contact/smallBackgrondOrbital.svg" alt="Small Orbital" width={minDim * constants.SMALL_ORBITAL_SCALE} height={minDim * constants.SMALL_ORBITAL_SCALE} style={{ '--final-opacity': width < 800 ? 0.25 : 1, animation: `${styles.fadeInToOpacity} 1s ease-in-out forwards` }} />
+          <Image src="/images/contact/mediumBackgroundOrbital.svg" alt="Medium Orbital" width={minDim * constants.MEDIUM_ORBITAL_SCALE} height={minDim * constants.MEDIUM_ORBITAL_SCALE} style={{ '--final-opacity': width < 800 ? 0.25 : 1, animation: `${styles.fadeInToOpacity} 1s ease-in-out forwards 0.2s` }} />
+          <Image src="/images/contact/largeBackgroundOrbital.svg" alt="Large Orbital" width={minDim * constants.LARGE_ORBITAL_SCALE} height={minDim * constants.LARGE_ORBITAL_SCALE} style={{ '--final-opacity': width < 800 ? 0.25 : 1, animation: `${styles.fadeInToOpacity} 1s ease-in-out forwards 0.4s` }} />
       </div>
       <div className={styles.titleContainer}>
         <div className={styles.titleImageSubContainer} style={{ marginTop: height > constants.SCREEN_HEIGHT_THRESHOLD ? 0 : 50 }}>
-          <Image src="/images/jason/jason.svg" alt="Jason Xu" className={styles.jasonImage} width={Math.min(1, height / 1000) * constants.JASON_IMAGE_SIZE} height={Math.min(1, height / 1000) * constants.JASON_IMAGE_SIZE} />
-          <h1 className={styles.nameTitle} style={{
-            fontSize: Math.min(constants.TITLE_FONT_SIZE, constants.TITLE_FONT_SIZE * width / 600) * Math.min(1, height / 1000),
-            marginTop: height < constants.SCREEN_HEIGHT_THRESHOLD ? constants.TITLE_MARGIN_TOP_SMALL : 0,
-            maxWidth: height < constants.SCREEN_HEIGHT_THRESHOLD ? constants.TITLE_MAX_WIDTH_SMALL : constants.TITLE_MAX_WIDTH,
-          }}>
-            JASON XU
-          </h1>
-          <p className={styles.nameSubtitle} style={{
-            fontSize: Math.min(constants.SUBTITLE_FONT_SIZE, constants.SUBTITLE_FONT_SIZE * width / 500),
-            display: 'block',
-          }}>
-            <span className={styles.highlight}>ENTREPRENEUR, INNOVATOR, CREATIVE</span>
-          </p>
+            <Image src="/images/jason/jason.svg" alt="Jason Xu" className={styles.jasonImage} width={Math.min(1, height / 1000) * constants.JASON_IMAGE_SIZE} height={Math.min(1, height / 1000) * constants.JASON_IMAGE_SIZE} style={{ opacity: 1, animation: `${styles.fadeInToOpacity} 1s ease-in-out forwards 1.2s`, '--final-opacity': width < 800 ? 0.25 : 1 }} />
+            <h1 className={styles.nameTitle} style={{
+              fontSize: Math.min(constants.TITLE_FONT_SIZE, constants.TITLE_FONT_SIZE * width / 600) * Math.min(1, height / 1000),
+              marginTop: height < constants.SCREEN_HEIGHT_THRESHOLD ? constants.TITLE_MARGIN_TOP_SMALL : 0,
+              maxWidth: height < constants.SCREEN_HEIGHT_THRESHOLD ? constants.TITLE_MAX_WIDTH_SMALL : constants.TITLE_MAX_WIDTH,
+              '--final-opacity': width < 800 ? 0.25 : 1,
+              animation: `${styles.fadeInToOpacity} 1s ease-in-out forwards 0.8s`,
+            }}>
+              JASON XU
+            </h1>
+            <p className={styles.nameSubtitle} style={{
+              fontSize: Math.min(constants.SUBTITLE_FONT_SIZE, constants.SUBTITLE_FONT_SIZE * width / 500),
+              display: 'block',
+              '--final-opacity': width < 800 ? 0.25 : 1,
+              animation: `${styles.fadeInToOpacity} 1s ease-in-out forwards 1s`,
+            }}>
+              <span className={styles.highlight}>ENTREPRENEUR, INNOVATOR, CREATIVE</span>
+            </p>
         </div>
       </div>
       <CircularCarousel width={width} height={height} contactCardList={contactCardList} style={{ zIndex: 1000 }} />
