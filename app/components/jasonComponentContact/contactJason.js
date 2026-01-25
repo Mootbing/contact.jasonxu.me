@@ -5,44 +5,21 @@ import styles from './contactJason.module.css'
 import { useContext, useEffect, useRef, useState } from 'react'
 import contactCardList from '@/app/data/contactCardList'
 
-function isMobileDevice() {
-  if (typeof window === 'undefined') return false;
-  return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
-}
 
 function ContactBalls ({imgSrc, link, hoverText, ...props}) {
   const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(isMobileDevice());
-  }, []);
-
   return (
     <div
       className={styles.contactBallContainer}
       {...props}
-      onMouseEnter={!isMobile ? () => setIsHovered(true) : undefined}
-      onMouseLeave={!isMobile ? () => setIsHovered(false) : undefined}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <a href={link} target="_blank" className={styles.contactBallLink}>
         <div className={styles.contactBall}>
           <div className={styles.contactBallBlur}></div>
-          <img
-            src={imgSrc}
-            className={styles.contactBallImage}
-            style={{
-              filter: isHovered && !isMobile ? "brightness(3)" : "brightness(1)"
-            }}
-          />
-          <p
-            className={
-              `${styles.contactBallText} ` +
-              (isMobile ? styles.mobile : (isHovered ? styles.hovered : ''))
-            }
-          >
-            {hoverText}
-          </p>
+          <img src={imgSrc} className={styles.contactBallImage} style={{ filter: isHovered ? "brightness(3)" : "brightness(1)" }} />
+          <p className={isHovered ? `${styles.contactBallText} ${styles.hovered}` : styles.contactBallText}>{hoverText}</p>
         </div>
       </a>
     </div>
