@@ -210,7 +210,6 @@
   max-width: 120px;
   max-height: 120px;
   border-radius: 50%;
-  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,14 +240,12 @@
   max-width: 120px;
   max-height: 120px;
   border-radius: 50%;
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  filter: blur(25px);
 
   z-index: -1;
 }
 
 .contactBall:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .contactBallImage {
